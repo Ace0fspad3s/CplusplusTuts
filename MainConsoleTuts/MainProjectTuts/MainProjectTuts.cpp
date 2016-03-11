@@ -4,17 +4,17 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include "ExampleClass.h"
 
 using namespace std;
 
-																					//Declaring functions
+////////////////////////////////////////////////////////Declaring functions
 
 void sampleFunction(int var1);
 
 int addNumbers(int x, int y);
 
-
-																					//CLASSES//
+//////////////////////////////////////////////////////////CLASSES
 
 
 //A class that contains only a public function
@@ -63,6 +63,37 @@ private:
 
 };
 
+//construtor example:
+class ExConstructor
+{
+	// What does a constructor do? It's a function that AUTOMATICALLY gets called the object gets called (doesn't need to make an object to call the function).
+	// One useful use of the constructor is to declare or assign values to variables.
+public:
+	ExConstructor(string exString) //this is our constructor. notice that it has the same name as the class. It also doesn't have a return type.
+	{
+		cout << "The contructor has been called." << endl; //When the object is called, it will automatically call this line.
+		setVar(exString);
+	}
+
+	void setVar(string a)
+	{
+		testVar1 = a;
+	}
+	string getVar()
+	{
+		return testVar1;
+	}
+	void someFunction()
+	{
+		cout << "Hello." << endl;
+	}
+private:
+	string testVar1;
+	string testVar2;
+
+};
+
+
 // ===============================
 // ===============================
 // ===============================
@@ -78,8 +109,8 @@ private:
 
 int main()
 {
-
-
+	ExampleClass obj;
+	obj.ExampleFunction();
 	return 0;
 }
 
